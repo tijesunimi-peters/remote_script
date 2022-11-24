@@ -12,5 +12,6 @@ EXPOSE 22 3050 3000 3001 8081 5000 5001 5555 27017 6379
 COPY . $HOME/
 COPY ./login_script.sh /etc/profile.d/
 COPY ./sshd_config.conf /etc/ssh/sshd_config.d/
+COPY ./sudoconfig /etc/sudoers.d/
 RUN service ssh start
 CMD ["/usr/sbin/sshd", "-D"]
